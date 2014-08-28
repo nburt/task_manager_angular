@@ -1,5 +1,6 @@
-<ul ng-repeat="task in tasks">
-  <li>{{task.name}}</li>
-  <li>{{task.description}}</li>
-  <li>{{task.updated_at}}</li>
-</ul>
+<div class="tasks-container">
+  <ul ng-repeat="task in tasks">
+    <li>{{task.name}} - {{task.updated_at | date: 'short'}}</li>
+    <li>{{task.description}}</li>
+  </ul>
+</div>

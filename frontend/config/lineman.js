@@ -1,1 +1,1 @@
-module.exports = require(process.env['LINEMAN_MAIN']);
+module.exports = require(process.env['LINEMAN_MAIN'])

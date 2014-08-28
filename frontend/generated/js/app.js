@@ -23377,11 +23377,12 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
 angular.module("app").run(["$templateCache", function($templateCache) {
 
   $templateCache.put("index.html",
-    "<ul ng-repeat=\"task in tasks\">\n" +
-    "  <li>{{task.name}}</li>\n" +
-    "  <li>{{task.description}}</li>\n" +
-    "  <li>{{task.updated_at}}</li>\n" +
-    "</ul>"
+    "<div class=\"tasks-container\">\n" +
+    "  <ul ng-repeat=\"task in tasks\">\n" +
+    "    <li>{{task.name}} - {{task.updated_at | date: 'short'}}</li>\n" +
+    "    <li>{{task.description}}</li>\n" +
+    "  </ul>\n" +
+    "</div>"
   );
 
 }]);

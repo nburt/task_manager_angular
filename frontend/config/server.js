@@ -14,23 +14,5 @@
 
 module.exports = {
   drawRoutes: function (app) {
-    app.get('/api/tasks', function (req, res) {
-      res.json([
-        {
-          id: 82,
-          name: "Get Groceries",
-          description: "Monday",
-          created_at: "Thu, 28 Aug 2014 15:05:13 UTC +00:00",
-          updated_at: "Thu, 28 Aug 2014 15:05:13 UTC +00:00"
-        },
-        {
-          id: 83,
-          name: "Wash Clothes",
-          description: "Saturday",
-          created_at: "Thu, 28 Aug 2014 15:05:13 UTC +00:00",
-          updated_at: "Thu, 28 Aug 2014 15:05:13 UTC +00:00"
-        }
-      ]);
-    });
   }
 };

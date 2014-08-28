@@ -1,0 +1,30 @@
+body {
+  background: $main-orange;
+}
+
+main {
+  @include outer-container;
+}
+
+.tasks-container {
+  margin-top: 2em;
+  background: $white;
+  padding: 1em;
+
+  ul {
+    border-bottom: 1px solid $main-orange;
+    margin-bottom: .5em;
+
+    &:first-child {
+      border-top: 1px solid $main-orange;
+    }
+  }
+
+  li:last-child {
+    margin-bottom: .5em;
+  }
+
+  li:first-child {
+    margin-top: .5em;
+  }
+}

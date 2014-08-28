@@ -11,7 +11,8 @@
  *   $ lineman config #=> to print the entire config
  *   $ lineman config concat.js #=> to see the JS config for the concat task.
  */
-module.exports = function(lineman) {
+
+module.exports = function (lineman) {
   //Override application configuration here. Common examples follow in the comments.
   return {
     // grunt-angular-templates assumes your module is named "app", but
@@ -24,7 +25,7 @@ module.exports = function(lineman) {
     // }
 
     server: {
-      pushState: true
+      pushState: true,
       // API Proxying
       //
       // During development, you'll likely want to make XHR (AJAX) requests to an API on the same
@@ -32,12 +33,13 @@ module.exports = function(lineman) {
       // requests for paths that don't match a static asset in ./generated will be forwarded to
       // whatever service might be running on the specified port.
       //
-      // apiProxy: {
-      //   enabled: true,
-      //   host: 'localhost',
-      //   port: 3000
-      // }
-    }
+      apiProxy: {
+        enabled: true,
+        host: 'localhost',
+        port: 3000,
+        prefix: 'api'
+      }
+    },
 
     // Sass
     //
@@ -45,7 +47,7 @@ module.exports = function(lineman) {
     // have Ruby installed as well as the `sass` gem. To enable it, comment out the
     // following line:
     //
-    // enableSass: true
+    enableSass: true
 
     // Asset Fingerprints
     //
