@@ -29,7 +29,7 @@ angular.module("app").controller("TasksIndexController", function ($scope, TaskR
   };
 });
 
-angular.module("app").controller("TasksDetailController", function ($scope, $routeParams, $http) {
+angular.module("app").controller("TasksDetailController", function ($scope, $routeParams, $http, $location) {
   $scope.showEditForm = false;
   $scope.editedTask = null;
 
@@ -60,6 +60,12 @@ angular.module("app").controller("TasksDetailController", function ($scope, $rou
         $scope.task = data;
         $scope.showEditForm = false;
       });
+  };
+
+  $scope.deleteTask = function () {
+    $http.delete("/api/tasks/" + $routeParams.id).success(function () {
+      $location.path("/");
+    });
   };
 
   $http.get("/api/tasks/" + $routeParams.id).success(function (data) {
