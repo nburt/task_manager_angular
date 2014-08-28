@@ -1,4 +1,4 @@
-h1, h2, h3, h4, li {
+h1, h2, h3, h4, li, label {
   font-weight: inherit;
   line-height: 1.2;
 }
@@ -21,4 +21,18 @@ h4 {
 
 p {
   margin: .5em 0;
+}
+
+a {
+  color: $link-blue;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+label {
+  font-size: 1.25em;
 }

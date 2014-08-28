@@ -1,7 +1,19 @@
-<div class="task-container">
-  <ul ng-repeat="task in tasks">
+<section>
+  <a ng-hide="showAddForm" ng-click="displayAddForm()">Add a Task</a>
+
+  <form ng-show="showAddForm">
+    <label>Name</label>
+    <input type="text" ng-model="task.name"/>
+    <label>Description</label>
+    <textarea ng-model="task.description"></textarea>
+    <button ng-click="hideAddForm()">Cancel</button>
+    <button ng-click="addTask()">Add Task</button>
+  </form>
+</section>
+<section>
+  <ul ng-repeat="task in tasks | orderBy : filter">
     <li><a href="/tasks/{{task.id}}">View Task</a></li>
     <li>{{task.name}} - {{task.updated_at | date: 'short'}}</li>
     <li>{{task.description}}</li>
   </ul>
-</div>
+</section>

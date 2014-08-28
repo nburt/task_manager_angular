@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "author": {
-    "name": "Nathanael Burt",
+    "name": "Nathanael Burt"
   },
   "devDependencies": {
     "coffee-script": "~1.6.3",
