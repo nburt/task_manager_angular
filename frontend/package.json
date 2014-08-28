@@ -4,8 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "author": {
-    "name": "John Doe",
-    "company": "ACME, Inc."
+    "name": "Nathanael Burt",
   },
   "devDependencies": {
     "coffee-script": "~1.6.3",
