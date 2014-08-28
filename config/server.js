@@ -13,20 +13,23 @@
  */
 
 module.exports = {
-  drawRoutes: function(app) {
-    app.post('/login', function(req, res) {
-      res.json({ message: 'logging in!' });
-    });
-
-    app.post('/logout', function(req, res) {
-      res.json({ message: 'logging out!'});
-    });
-
-    app.get('/books', function (req, res) {
+  drawRoutes: function (app) {
+    app.get('/api/tasks', function (req, res) {
       res.json([
-        {title: 'Great Expectations', author: 'Dickens'},
-        {title: 'Foundation Series', author: 'Asimov'},
-        {title: 'Treasure Island', author: 'Stephenson'}
+        {
+          id: 82,
+          name: "Get Groceries",
+          description: "Monday",
+          created_at: "Thu, 28 Aug 2014 15:05:13 UTC +00:00",
+          updated_at: "Thu, 28 Aug 2014 15:05:13 UTC +00:00"
+        },
+        {
+          id: 83,
+          name: "Wash Clothes",
+          description: "Saturday",
+          created_at: "Thu, 28 Aug 2014 15:05:13 UTC +00:00",
+          updated_at: "Thu, 28 Aug 2014 15:05:13 UTC +00:00"
+        }
       ]);
     });
   }
