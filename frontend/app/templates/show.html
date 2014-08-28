@@ -1,7 +1,22 @@
 <section>
-  <h3>{{task.name}}</h3>
+  <div class="task-details-container" ng-hide="showEditForm">
+    <h3>{{task.name}}</h3>
 
-  <p>{{task.updated_at | date: 'short'}}</p>
+    <p>{{task.updated_at | date: 'short'}}</p>
 
-  <p>{{task.description}}</p>
+    <p>{{task.description}}</p>
+
+    <a ng-click="displayEditForm()">Edit Task</a>
+  </div>
+
+  <div class="edit-form-container" ng-show="showEditForm">
+    <form>
+      <label>Name</label>
+      <input type="text" ng-model="editedTask.name"/>
+      <label>Description</label>
+      <textarea ng-model="editedTask.description"></textarea>
+      <button ng-click="hideEditForm()">Cancel</button>
+      <button ng-click="editTask()">Update Task</button>
+    </form>
+  </div>
 </section>

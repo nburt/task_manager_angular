@@ -1,8 +1,6 @@
 angular.module("app").controller("TasksIndexController", function ($scope, TaskResource, $http) {
   $scope.tasks = TaskResource.query();
-
   $scope.showAddForm = false;
-
   $scope.filter = '-updated_at';
 
   $scope.displayAddForm = function () {
@@ -32,6 +30,38 @@ angular.module("app").controller("TasksIndexController", function ($scope, TaskR
 });
 
 angular.module("app").controller("TasksDetailController", function ($scope, $routeParams, $http) {
+  $scope.showEditForm = false;
+  $scope.editedTask = null;
+
+  $scope.displayEditForm = function () {
+    $scope.showEditForm = true;
+    $scope.editedTask = angular.copy($scope.task);
+  };
+
+  $scope.hideEditForm = function () {
+    $scope.editedTask = angular.copy($scope.task);
+    $scope.resetForm();
+  };
+
+  $scope.resetForm = function () {
+    $scope.editedTask = $scope.task;
+    $scope.showEditForm = false;
+  };
+
+  $scope.editTask = function () {
+    $http.put(
+        "/api/tasks/" +
+        $routeParams.id +
+        "?name=" +
+        $scope.editedTask.name +
+        "&description=" +
+        $scope.editedTask.description
+    ).success(function (data) {
+        $scope.task = data;
+        $scope.showEditForm = false;
+      });
+  };
+
   $http.get("/api/tasks/" + $routeParams.id).success(function (data) {
     $scope.task = data;
   });
