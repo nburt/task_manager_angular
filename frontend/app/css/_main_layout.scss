@@ -6,14 +6,14 @@ main {
   @include outer-container;
 }
 
-.tasks-container {
+.task-container {
+  overflow: hidden;
   margin-top: 2em;
   background: $white;
   padding: 1em;
 
   ul {
     border-bottom: 1px solid $main-orange;
-    margin-bottom: .5em;
 
     &:first-child {
       border-top: 1px solid $main-orange;

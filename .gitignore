@@ -22,3 +22,5 @@
 
 /frontend/dist
 /frontend/generated
+
+/frontend/.sass-cache*
