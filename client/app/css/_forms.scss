@@ -8,8 +8,8 @@ input, textarea {
   border: 1px solid $black;
 
   &:active, &:focus {
-    outline-color: $main-orange;
-    border: 1px solid $main-orange;
+    outline-color: $main-blue;
+    border: 1px solid $main-blue;
   }
 }
 
@@ -30,13 +30,13 @@ button {
   margin: .5em 0 0 0;
   padding: .5em;
   color: $white;
-  border: 1px solid $main-orange;
-  background: $main-orange;
+  border: 1px solid $light-blue;
+  background: $light-blue;
 
   transition: border 500ms ease, background-color 500ms ease;
 
   &:hover {
-    border: 1px solid $hover-orange;
-    background: $hover-orange;
+    border: 1px solid $main-blue;
+    background: $main-blue;
   }
 }
