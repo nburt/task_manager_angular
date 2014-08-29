@@ -29,7 +29,7 @@ angular.module("app").controller("TasksIndexController", function ($scope, TaskR
   };
 
   $scope.submitShortcut = function ($event) {
-    if ($event.ctrlKey == true && $event.keyIdentifier == "Enter") {
+    if ($event.ctrlKey && $event.keyIdentifier === "Enter") {
       $scope.addTask();
     }
   };
