@@ -27,6 +27,12 @@ angular.module("app").controller("TasksIndexController", function ($scope, TaskR
     $scope.task = {};
     $scope.showAddForm = false;
   };
+
+  $scope.submitShortcut = function ($event) {
+    if ($event.ctrlKey == true && $event.keyIdentifier == "Enter") {
+      $scope.addTask();
+    }
+  };
 });
 
 angular.module("app").controller("TasksDetailController", function ($scope, $routeParams, $http, $location) {

@@ -5,7 +5,7 @@
     <label>Name</label>
     <input type="text" ng-model="task.name"/>
     <label>Description</label>
-    <textarea ng-model="task.description"></textarea>
+    <textarea ng-model="task.description" ng-keypress="submitShortcut($event)"></textarea>
     <button ng-click="hideAddForm()">Cancel</button>
     <button ng-click="addTask()">Add Task</button>
   </form>
